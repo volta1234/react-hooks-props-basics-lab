@@ -5,14 +5,15 @@ import About from "./About";
 
 // pass this data down as props to the child component(s) that need it!
 import user from "../data/user";
+import userEvent from "@testing-library/user-event";
 console.log(user);
 
 function App() {
   return (
     <div>
+      <Home name={user.name} city={user.city} color={user.color}/>
+      <About bio={user.bio} githubLink={user.links.github} linkedinLink={user.links.linkedin}/>
       <NavBar />
-      <Home />
-      <About />
     </div>
   );
 }
